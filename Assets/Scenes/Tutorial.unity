@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 795692545122069902, guid: 5f4deec0fcd19f849876e61432cc8b82, type: 3}
+    - target: {fileID: 11499078, guid: 81acfa4b78dfa47499a6c2fd6e521ebd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
     - target: {fileID: 22409286, guid: 81acfa4b78dfa47499a6c2fd6e521ebd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1298,6 +1302,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3 Ways DPad
       objectReference: {fileID: 0}
+    - target: {fileID: 8027288174229068382, guid: 3af034235ee23b54986a8ffc8ab1d4eb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027288174229160024, guid: 3af034235ee23b54986a8ffc8ab1d4eb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8027288174229182516, guid: 3af034235ee23b54986a8ffc8ab1d4eb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
     - target: {fileID: 8027288174242100034, guid: 3af034235ee23b54986a8ffc8ab1d4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1470,6 +1486,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -8667679988622467525, guid: 5f4deec0fcd19f849876e61432cc8b82, type: 3}
+    - target: {fileID: 11499078, guid: 81acfa4b78dfa47499a6c2fd6e521ebd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.43137255
+      objectReference: {fileID: 0}
     - target: {fileID: 22409286, guid: 81acfa4b78dfa47499a6c2fd6e521ebd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

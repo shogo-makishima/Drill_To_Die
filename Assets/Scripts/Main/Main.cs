@@ -12,17 +12,22 @@ namespace Main {
         [DllImport("__Internal")]
         private static extern void WindowAlert(string message);
         public static bool _isDebug = true;
+        public static bool _wasLoad = false;
         public static string currentLevel = "Tutorial";
 
         public static void Start() {
-            StaticScriptableObject staticScriptable = SaveManager.Load();
+            if (!_wasLoad) {
+                StaticScriptableObject staticScriptable = SaveManager.Load();
 
-            Ships.ships = staticScriptable.ships;
-            Items.items = staticScriptable.items;
-            Levels.levels = staticScriptable.levels;
-            Player.moneys = staticScriptable.moneys;
-            Player.currentShip = staticScriptable.currentShip;
-            Main.currentLevel = staticScriptable.currentLevel;
+                Ships.ships = staticScriptable.ships;
+                Items.items = staticScriptable.items;
+                Levels.levels = staticScriptable.levels;
+                Player.moneys = staticScriptable.moneys;
+                Player.currentShip = staticScriptable.currentShip;
+                Main.currentLevel = staticScriptable.currentLevel;
+
+                _wasLoad = true;
+            }
 
             Player.UpgradeStats();
         }

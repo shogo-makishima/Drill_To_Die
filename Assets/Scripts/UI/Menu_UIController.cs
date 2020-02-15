@@ -9,6 +9,7 @@ public class Menu_UIController : MonoBehaviour {
     [SerializeField] private Text _moneysText = null;
 
     void Awake() {
+        Main.Main.Start();
         _startButton.onClick.AddListener(delegate () { StartGame(); });
     }
 
