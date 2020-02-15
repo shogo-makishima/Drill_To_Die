@@ -17,6 +17,6 @@ public class Menu_UIController : MonoBehaviour {
     }
     
     void StartGame() {
-        Debug.Log("StartGame");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Main.Main.currentLevel);
     }
 }

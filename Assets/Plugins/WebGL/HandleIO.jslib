@@ -8,6 +8,10 @@ var HandleIO = {
         FS.syncfs(false,function (err) {
             // handle callback
         });
+    },
+    ConsoleLog: function(message)
+    {
+        console.log(message);
     }
 };
 

@@ -27,7 +27,7 @@ MonoBehaviour:
       - level: 3
         variable: 40
         price: 5000
-      currentLevel: 1
+      currentLevel: 0
     - name: Engine
       levelUpgrades:
       - level: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
       - level: 3
         variable: 0.7
         price: 8000
-      currentLevel: 1
+      currentLevel: 0
     - name: Laser
       levelUpgrades:
       - level: 1
@@ -51,50 +51,65 @@ MonoBehaviour:
       - level: 3
         variable: 3
         price: 10000
-      currentLevel: 1
+      currentLevel: 0
     - name: Health
       levelUpgrades:
       - level: 1
-        variable: 0
+        variable: 30
         price: 0
       - level: 2
-        variable: 0
+        variable: 40
         price: 600
       - level: 2
-        variable: 0
+        variable: 50
         price: 3200
-      currentLevel: 1
+      currentLevel: 0
   items:
   - name: Stone
-    price: 0
+    price: 5
     gameObject: {fileID: 0}
     destription: 
   - name: Ferrum
-    price: 0
+    price: 30
     gameObject: {fileID: 0}
     destription: 
   - name: Gold
-    price: 0
+    price: 100
     gameObject: {fileID: 0}
     destription: 
   - name: Iridium
-    price: 0
+    price: 300
     gameObject: {fileID: 0}
     destription: 
   - name: GreenCrystal
-    price: 0
+    price: 1000
     gameObject: {fileID: 0}
     destription: 
   - name: WhiteCrystal
-    price: 0
+    price: 5000
     gameObject: {fileID: 0}
     destription: 
   - name: RedCrystal
-    price: 0
+    price: 520
     gameObject: {fileID: 0}
     destription: 
   - name: TrashCrystal
-    price: 0
+    price: 1
     gameObject: {fileID: 0}
     destription: 
+  levels:
+  - name: Menu
+    nameScene:
+      m_Handle: 0
+    finish: 0
+  - name: Tutorial
+    nameScene:
+      m_Handle: 0
+    finish: 0
+  - name: First Expedition
+    nameScene:
+      m_Handle: 0
+    finish: 0
   moneys: 0
+  currentShip: Betty
+  currentLevel: Tutorial

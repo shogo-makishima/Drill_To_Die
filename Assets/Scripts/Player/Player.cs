@@ -46,16 +46,23 @@ public class Player : MonoBehaviour {
             print(Main.Player.InventoryString());
         else if (Input.GetKeyDown(KeyCode.C))
             Main.SaveManager.Save();
+        else if (Input.GetKeyDown(KeyCode.Delete))
+            Main.SaveManager.DestroySave();
 
-        animator.SetFloat("X", CnControls.CnInputManager.GetAxis("Horizontal"));
-        animator.SetFloat("Y", CnControls.CnInputManager.GetAxis("Vertical"));
+        float axisValue = Mathf.Abs(CnControls.CnInputManager.GetAxis("Horizontal")) + Mathf.Abs(CnControls.CnInputManager.GetAxis("Vertical"));
+        Main.Player.fuel -= axisValue * Time.deltaTime * 2f * Main.Player.engine;
+
+        if (Main.Player.fuel > 0) {
+            animator.SetFloat("X", CnControls.CnInputManager.GetAxis("Horizontal"));
+            animator.SetFloat("Y", CnControls.CnInputManager.GetAxis("Vertical"));
+        }
 
         FollowCamera();
         MoveBorders();
     }
 
     private void FixedUpdate() {
-        if (rigidbody) {
+        if (rigidbody & Main.Player.fuel > 0) {
             rigidbody.AddForce(transform.up * 100 * Time.deltaTime * CnControls.CnInputManager.GetAxis("Vertical") * _forceY, ForceMode2D.Force);
             rigidbody.AddForce(transform.right * 100 * Time.deltaTime * ((CnControls.CnInputManager.GetAxis("Horizontal") > 0) ? CnControls.CnInputManager.GetAxis("Horizontal") : 0) * _forceX, ForceMode2D.Force);
         }

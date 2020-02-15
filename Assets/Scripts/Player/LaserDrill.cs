@@ -33,7 +33,7 @@ public class LaserDrill : MonoBehaviour {
         if (hit.collider != null && !hit.collider.isTrigger) {
             _lineRenderer.SetPosition(1, hit.point);
             if (hit.collider.tag == "Object")
-                hit.collider.GetComponent<ItemOnScene>().Damage(1f);
+                hit.collider.GetComponent<ItemOnScene>().Damage(Main.Player.laser);
 
             return;
         }

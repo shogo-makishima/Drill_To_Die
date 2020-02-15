@@ -8,5 +8,10 @@ public class StaticScriptableObject : ScriptableObject {
 
     public Main.Item[] items = new Main.Item[] { };
 
+    public Main.Level[] levels = new Main.Level[] { };
+
     public float moneys = 0f;
+    public string currentShip = "Betty";
+
+    public string currentLevel = "Tutorial";
 }
