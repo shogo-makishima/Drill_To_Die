@@ -23,7 +23,7 @@ public class PickUpLoot : MonoBehaviour {
 #endif
 
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_WEBGL
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 100f, 1f, layerMask: layerMask);
 

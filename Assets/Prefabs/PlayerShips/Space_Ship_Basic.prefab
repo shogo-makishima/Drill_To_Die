@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3442655704424503219}
   - component: {fileID: 3442655704424503218}
   - component: {fileID: 4233017465137392641}
+  - component: {fileID: 199706032261931419}
   m_Layer: 0
   m_Name: Space_Ship_Basic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,3 +177,16 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!114 &199706032261931419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442655704424503217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937f66b851f85de4ca32306b44193ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drills: []

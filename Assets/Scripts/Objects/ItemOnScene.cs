@@ -39,7 +39,7 @@ public class ItemOnScene : MonoBehaviour {
             Damage(100f);
     }
 
-    void Damage(float damage) {
+    public void Damage(float damage) {
         damageEvent.Invoke(damage, objectsDictionary[lootDropItem.ToString()]);
     }
 }
