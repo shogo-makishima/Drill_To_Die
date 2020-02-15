@@ -4,41 +4,33 @@ using UnityEngine;
 
 namespace Main {
     public class Ships {
-        public static Dictionary<string, Ship> dictionaryShips = new Dictionary<string, Ship> {
-            {
-                "Betty",
-                new Ship("Betty", new Dictionary<string, Upgrade> {
-                    { "Fuel", new Upgrade("Fuel", new Dictionary<int, int> { { 0, 10 }, { 1, 12 }, { 2, 15 }, { 3, 17 }, { 4, 20 }}) },
-                    { "Laser", new Upgrade("Laser", new Dictionary<int, int> { { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }}) },
-                    { "Engine", new Upgrade("Engine", new Dictionary<int, int> { { 0, 10 }, { 1, 12 }, { 2, 15 }, { 3, 17 }, { 4, 20 }}) },
-                    { "Guns", new Upgrade("Guns", new Dictionary<int, int> { { 0, 0 }, { 1, 30 }, { 2, 50 }, { 3, 75 }, { 4, 100 }}) },
-                })
-            }
-        };
+        public static Ship[] ships = new Ship[] { };
     }
 
+    [System.Serializable]
     public class Ship {
         public string name = "";
+        public GameObject prefab = null;
+        public Upgrade[] upgrades = null;
+    }
 
-        public Dictionary<string, Upgrade> dicitionaryUpgrades = new Dictionary<string, Upgrade> {
-            { "Fuel", new Upgrade("Fuel", new Dictionary<int, int> { { 0, 10 }, { 1, 12 }, { 2, 15 }, { 3, 17 }, { 4, 20 }}) },
-        };
+    [System.Serializable]
+    public class Upgrade {
+        public string name = "";
+        public LevelUpgrade[] levelUpgrades = null;
+        public int currentLevel = 1;
 
-        public Ship(string getName, Dictionary<string, Upgrade> upgrades) {
+        public Upgrade(string getName, LevelUpgrade[] getLevelUpgrades, int getCurrentLevel) {
             name = getName;
-
-            dicitionaryUpgrades = upgrades;
+            levelUpgrades = getLevelUpgrades;
+            currentLevel = getCurrentLevel;
         }
     }
 
-    public class Upgrade {
-        public string name = "";
-
-        public Dictionary<int, int> dictionaryLevels = new Dictionary<int, int> {};
-
-        public Upgrade(string getName, Dictionary<int, int> levels) {
-            name = getName;
-            dictionaryLevels = levels;
-        }
+    [System.Serializable]
+    public class LevelUpgrade {
+        public int level = 1;
+        public float variable = 1f;
+        public float price = 1f;
     }
 }

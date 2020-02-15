@@ -7,6 +7,7 @@ public class Drill : MonoBehaviour {
 
     void Start() {
 
+        // print(ships.ships.Length);
     }
 
     void Update() {
