@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: bca8d18c557429e43bfae91372563175, type: 3}
   m_Name: Static
   m_EditorClassIdentifier: Assembly-CSharp::StaticScriptableObject
   ships:
@@ -19,14 +19,14 @@ MonoBehaviour:
     - name: Fuel
       levelUpgrades:
       - level: 1
-        variable: 100
+        variable: 20
         price: 0
       - level: 2
-        variable: 150
+        variable: 30
         price: 1000
       - level: 3
-        variable: 200
-        price: 3000
+        variable: 40
+        price: 5000
       currentLevel: 1
     - name: Engine
       levelUpgrades:
@@ -34,11 +34,11 @@ MonoBehaviour:
         variable: 1
         price: 0
       - level: 2
-        variable: 0.8
+        variable: 0.9
         price: 2000
       - level: 3
-        variable: 0.5
-        price: 6000
+        variable: 0.7
+        price: 8000
       currentLevel: 1
     - name: Laser
       levelUpgrades:
@@ -50,39 +50,51 @@ MonoBehaviour:
         price: 3000
       - level: 3
         variable: 3
-        price: 6000
+        price: 10000
+      currentLevel: 1
+    - name: Health
+      levelUpgrades:
+      - level: 1
+        variable: 0
+        price: 0
+      - level: 2
+        variable: 0
+        price: 600
+      - level: 2
+        variable: 0
+        price: 3200
       currentLevel: 1
   items:
-  - name: 
+  - name: Stone
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: Ferrum
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: Gold
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: Iridium
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: GreenCrystal
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: WhiteCrystal
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: RedCrystal
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  - name: 
+  - name: TrashCrystal
     price: 0
     gameObject: {fileID: 0}
     destription: 
-  dropItem: 7
+  moneys: 0

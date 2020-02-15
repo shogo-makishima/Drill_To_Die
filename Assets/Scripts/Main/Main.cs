@@ -9,15 +9,23 @@ using UnityEngine;
 
 namespace Main {
     public class Main {
+        [DllImport("__Internal")]
+        private static extern void WindowAlert(string message);
+
         public static void Start() {
             StaticScriptableObject staticScriptable = Resources.Load<StaticScriptableObject>("ScriptableObjects\\Static");
+
+            Debug.Log(staticScriptable);
+
             Ships.ships = staticScriptable.ships;
             Items.itemsDictionary = staticScriptable.items;
 
-            foreach (Ship ship in Ships.ships)
-                Debug.LogWarning(ship);
+            // SaveManager.PlatformSafeMessage(staticScriptable.ToString());            
 
-            Debug.LogError(JsonUtility.ToJson(staticScriptable));
+            // foreach (Ship ship in Ships.ships)
+            // Debug.LogWarning(ship);
+
+            // Debug.LogError(JsonUtility.ToJson(staticScriptable));
         }
 
         public static Ship GetShipWithName(string name) {
@@ -167,7 +175,7 @@ namespace Main {
             return gameDetails;
         }
 
-        private static void PlatformSafeMessage(string message) {
+        public static void PlatformSafeMessage(string message) {
             if (Application.platform == RuntimePlatform.WebGLPlayer) {
                 WindowAlert(message);
             } else {
