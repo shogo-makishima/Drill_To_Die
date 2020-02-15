@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.I))
             print(Main.Player.InventoryString());
-        else if (Input.GetKeyDown(KeyCode.F5))
+        else if (Input.GetKeyDown(KeyCode.C))
             Main.SaveManager.Save();
 
         animator.SetFloat("X", CnControls.CnInputManager.GetAxis("Horizontal"));

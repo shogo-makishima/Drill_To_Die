@@ -137,22 +137,21 @@ namespace Main {
             gameDetails.ships = Ships.ships;
             gameDetails.moneys = Player.moneys;
 
-            string dataPath = string.Format($"{Application.persistentDataPath}/save1.json");
+            PlatformSafeMessage(JsonUtility.ToJson(gameDetails));
 
-            try {
-                if (File.Exists(dataPath)) {
-                    File.WriteAllText(dataPath, string.Empty);
-                } else {
-                    File.Create(dataPath);
-                }
+            string dataPath = Path.Combine(Application.persistentDataPath, "save.json");
 
-                File.WriteAllText(dataPath, JsonUtility.ToJson(gameDetails));
+            if (File.Exists(dataPath)) {
+                File.WriteAllText(dataPath, string.Empty);
+            } else {
+                FileStream myFile = File.Create(dataPath);
+                myFile.Close();
+            }
 
-                if (Application.platform == RuntimePlatform.WebGLPlayer) {
-                    SyncFiles();
-                }
-            } catch (Exception e) {
-                PlatformSafeMessage("Failed to Save: " + e.Message);
+            File.WriteAllText(dataPath, JsonUtility.ToJson(gameDetails));
+
+            if (Application.platform == RuntimePlatform.WebGLPlayer) {
+                SyncFiles();
             }
         }
 
