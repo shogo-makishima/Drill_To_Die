@@ -10,6 +10,8 @@ namespace Main {
 
         public static int inventoryWeight = 25;
 
+        public static float moneys = 1000f;
+
         public static float laser = 1;
         public static float fuel = 1;
         public static float engine = 1;
