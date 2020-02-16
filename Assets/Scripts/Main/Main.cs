@@ -95,7 +95,7 @@ namespace Main {
                 }
             }
 
-            if (currentInt + 1 <= Levels.levels.Length) {
+            if (currentInt + 1 < Levels.levels.Length) {
                 Main.currentLevel = Levels.levels[currentInt + 1].name;
                 Player.currentShip = Levels.levels[currentInt + 1].shipName;
             }
