@@ -10,7 +10,8 @@ public class ItemOnScene : MonoBehaviour {
         Asteroid = 1,
         Turret = 2,
         Container = 3,
-        AbadonnedShip = 4
+        AbadonnedShip = 4,
+        Mine = 5,
     }
 
     [SerializeField] public Main.Items.LootDropItem lootDropItem = Main.Items.LootDropItem.Stone;
@@ -35,8 +36,7 @@ public class ItemOnScene : MonoBehaviour {
 
     
     void Update() {
-        if (Input.GetKeyDown(KeyCode.G))
-            Damage(100f);
+        if (typeObject == TypeObject.Turret) AIEvent.Invoke();
     }
 
     public void Damage(float damage) {

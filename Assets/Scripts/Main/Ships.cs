@@ -11,6 +11,7 @@ namespace Main {
     public class Ship {
         public string name = "";
         public GameObject prefab = null;
+        public Sprite UI_Sprite = null;
         public Upgrade[] upgrades = null;
     }
 

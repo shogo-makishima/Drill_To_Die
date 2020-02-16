@@ -32,6 +32,8 @@ public class Menu_UIController : MonoBehaviour {
         upgradeHealth.SetupButton("Health");
         upgradeLaser.SetupButton("Laser");
         upgradeCargo.SetupButton("Cargo");
+
+        _shipImage.sprite = Main.Main.GetShipWithName(Main.Player.currentShip).UI_Sprite;
     }
 
     void Update() {

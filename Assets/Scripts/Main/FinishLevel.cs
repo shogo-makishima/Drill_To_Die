@@ -8,7 +8,7 @@ public class FinishLevel : MonoBehaviour {
     }
 
     void Update() {
-        if (Main.Player.fuel <= 0) {
+        if (Main.Player.fuel <= 0 | Main.Player.health <= 0) {
             EndGame();
         }
     }

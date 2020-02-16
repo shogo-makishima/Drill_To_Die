@@ -13,8 +13,8 @@ public class Game_UIController : MonoBehaviour {
     }
 
     void Update() {
-        fuelText.text = $"{System.Math.Round(Main.Player.fuel, 2)} / {Main.Player.maxFuel}";
-        cargoText.text = $"{Main.Player.WeightInventory() - 1} / {Main.Player.inventoryWeight}";
-        healthText.text = $"{Main.Player.maxHealth} / {Main.Player.health}";
+        fuelText.text = $"{System.Math.Round(Main.Player.fuel, 2)} | {Main.Player.maxFuel}";
+        cargoText.text = $"{Main.Player.WeightInventory() - 1} | {Main.Player.inventoryWeight}";
+        healthText.text = $"{Main.Player.health} | {Main.Player.maxHealth}";
     }
 }

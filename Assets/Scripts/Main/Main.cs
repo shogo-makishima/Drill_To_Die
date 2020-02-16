@@ -95,8 +95,10 @@ namespace Main {
                 }
             }
 
-            if (currentInt + 1 <= Levels.levels.Length)
+            if (currentInt + 1 <= Levels.levels.Length) {
                 Main.currentLevel = Levels.levels[currentInt + 1].name;
+                Player.currentShip = Levels.levels[currentInt + 1].shipName;
+            }
         }
     }
 
@@ -209,6 +211,7 @@ namespace Main {
     [System.Serializable]
     public class Level {
         public string name = "";
+        public string shipName = "";
         public UnityEngine.SceneManagement.Scene nameScene;
         public bool finish = false;
     }
