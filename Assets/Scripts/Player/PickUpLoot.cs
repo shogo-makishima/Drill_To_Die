@@ -12,7 +12,7 @@ public class PickUpLoot : MonoBehaviour {
 
     void Update() {
 #if UNITY_ANDROID
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 100f, 1f, layerMask: layerMask);
         for (int i = 0; i < Input.touchCount; ++i)
             if (Input.GetTouch(i).phase.Equals(TouchPhase.Began)) {
@@ -22,7 +22,7 @@ public class PickUpLoot : MonoBehaviour {
             }
 #endif
 
-
+/*
 #if UNITY_EDITOR || UNITY_WEBGL
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction * 100f, 1f, layerMask: layerMask);
@@ -33,6 +33,7 @@ public class PickUpLoot : MonoBehaviour {
             StartCoroutine(CullDown());
         }
 #endif
+*/
     }
 
     IEnumerator CullDown() {
