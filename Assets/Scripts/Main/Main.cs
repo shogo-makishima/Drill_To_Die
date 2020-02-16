@@ -12,17 +12,22 @@ namespace Main {
         [DllImport("__Internal")]
         private static extern void WindowAlert(string message);
         public static bool _isDebug = true;
+        public static bool _wasLoad = false;
         public static string currentLevel = "Tutorial";
 
         public static void Start() {
-            StaticScriptableObject staticScriptable = SaveManager.Load();
+            if (!_wasLoad) {
+                StaticScriptableObject staticScriptable = SaveManager.Load();
 
-            Ships.ships = staticScriptable.ships;
-            Items.items = staticScriptable.items;
-            Levels.levels = staticScriptable.levels;
-            Player.moneys = staticScriptable.moneys;
-            Player.currentShip = staticScriptable.currentShip;
-            Main.currentLevel = staticScriptable.currentLevel;
+                Ships.ships = staticScriptable.ships;
+                Items.items = staticScriptable.items;
+                Levels.levels = staticScriptable.levels;
+                Player.moneys = staticScriptable.moneys;
+                Player.currentShip = staticScriptable.currentShip;
+                Main.currentLevel = staticScriptable.currentLevel;
+
+                _wasLoad = true;
+            }
 
             Player.UpgradeStats();
         }
@@ -47,6 +52,16 @@ namespace Main {
 
             return null;
         }
+
+        public static LevelUpgrade GetNextLevelUpgrade(string shipName, string upgradeName) {
+            Upgrade currentUpgrade = GetUpgrade(shipName, upgradeName);
+            if (currentUpgrade.currentLevel + 1 <= currentUpgrade.levelUpgrades.Length - 1) {
+                return currentUpgrade.levelUpgrades[currentUpgrade.currentLevel + 1];
+            }
+
+            return null;
+        }
+
 
         public static Item GetItem(string name) {
             foreach (Item item in Items.items) {
@@ -80,8 +95,10 @@ namespace Main {
                 }
             }
 
-            if (currentInt + 1 <= Levels.levels.Length)
+            if (currentInt + 1 <= Levels.levels.Length) {
                 Main.currentLevel = Levels.levels[currentInt + 1].name;
+                Player.currentShip = Levels.levels[currentInt + 1].shipName;
+            }
         }
     }
 
@@ -112,6 +129,10 @@ namespace Main {
 
             Upgrade engineUpgrade = Main.GetUpgrade(Player.currentShip, "Engine");
             Player.engine = engineUpgrade.levelUpgrades[engineUpgrade.currentLevel].variable;
+
+            Upgrade cargoUpgrade = Main.GetUpgrade(Player.currentShip, "Cargo");
+            Player.inventoryWeight = (int)cargoUpgrade.levelUpgrades[cargoUpgrade.currentLevel].variable;
+
 
             Upgrade healthUpgrade = Main.GetUpgrade(Player.currentShip, "Health");
             Player.maxHealth = healthUpgrade.levelUpgrades[healthUpgrade.currentLevel].variable;
@@ -190,6 +211,7 @@ namespace Main {
     [System.Serializable]
     public class Level {
         public string name = "";
+        public string shipName = "";
         public UnityEngine.SceneManagement.Scene nameScene;
         public bool finish = false;
     }

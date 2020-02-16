@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Menu_UIController : MonoBehaviour {
@@ -8,8 +9,31 @@ public class Menu_UIController : MonoBehaviour {
     [SerializeField] private Button _startButton = null;
     [SerializeField] private Text _moneysText = null;
 
+    [SerializeField] private UpgradePrefab upgradeFuel = null;
+    [SerializeField] private UpgradePrefab upgradeEngine = null;
+    [SerializeField] private UpgradePrefab upgradeHealth = null;
+    [SerializeField] private UpgradePrefab upgradeLaser = null;
+    [SerializeField] private UpgradePrefab upgradeCargo = null;
+
+
     void Awake() {
-        _startButton.onClick.AddListener(delegate () { StartGame(); });
+        Main.Main.Start();
+
+        // _startButton.onClick.AddListener(delegate () { StartGame(); });
+
+        EventTrigger trigger = _startButton.GetComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((data) => { StartGame(); });
+        trigger.triggers.Add(entry);
+
+        upgradeFuel.SetupButton("Fuel");
+        upgradeEngine.SetupButton("Engine");
+        upgradeHealth.SetupButton("Health");
+        upgradeLaser.SetupButton("Laser");
+        upgradeCargo.SetupButton("Cargo");
+
+        _shipImage.sprite = Main.Main.GetShipWithName(Main.Player.currentShip).UI_Sprite;
     }
 
     void Update() {

@@ -41,6 +41,7 @@ public class ItemSetting : Editor {
             EditorGUILayout.PropertyField(objects);
             EditorGUILayout.PropertyField(damageEvent);
             EditorGUILayout.PropertyField(AIEvent);
+        } else if (typeItem.enumNames[typeItem.enumValueIndex] == "Mine") {
         } else if (typeItem.enumNames[typeItem.enumValueIndex] == "Container") {
             EditorGUILayout.PropertyField(lootDropItem);
             EditorGUILayout.PropertyField(objectsName);
