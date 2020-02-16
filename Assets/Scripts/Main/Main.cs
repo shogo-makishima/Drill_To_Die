@@ -53,6 +53,16 @@ namespace Main {
             return null;
         }
 
+        public static LevelUpgrade GetNextLevelUpgrade(string shipName, string upgradeName) {
+            Upgrade currentUpgrade = GetUpgrade(shipName, upgradeName);
+            if (currentUpgrade.currentLevel + 1 <= currentUpgrade.levelUpgrades.Length - 1) {
+                return currentUpgrade.levelUpgrades[currentUpgrade.currentLevel + 1];
+            }
+
+            return null;
+        }
+
+
         public static Item GetItem(string name) {
             foreach (Item item in Items.items) {
                 if (item.name == name) {
@@ -117,6 +127,10 @@ namespace Main {
 
             Upgrade engineUpgrade = Main.GetUpgrade(Player.currentShip, "Engine");
             Player.engine = engineUpgrade.levelUpgrades[engineUpgrade.currentLevel].variable;
+
+            Upgrade cargoUpgrade = Main.GetUpgrade(Player.currentShip, "Cargo");
+            Player.inventoryWeight = (int)cargoUpgrade.levelUpgrades[cargoUpgrade.currentLevel].variable;
+
 
             Upgrade healthUpgrade = Main.GetUpgrade(Player.currentShip, "Health");
             Player.maxHealth = healthUpgrade.levelUpgrades[healthUpgrade.currentLevel].variable;

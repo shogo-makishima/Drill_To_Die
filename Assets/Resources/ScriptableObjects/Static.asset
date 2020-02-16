@@ -60,9 +60,21 @@ MonoBehaviour:
       - level: 2
         variable: 40
         price: 600
-      - level: 2
+      - level: 3
         variable: 50
         price: 3200
+      currentLevel: 0
+    - name: Cargo
+      levelUpgrades:
+      - level: 1
+        variable: 10
+        price: 0
+      - level: 2
+        variable: 15
+        price: 2300
+      - level: 3
+        variable: 25
+        price: 6800
       currentLevel: 0
   items:
   - name: Stone
@@ -105,11 +117,11 @@ MonoBehaviour:
   - name: Tutorial
     nameScene:
       m_Handle: 0
-    finish: 0
+    finish: 1
   - name: First Expedition
     nameScene:
       m_Handle: 0
     finish: 0
-  moneys: 0
+  moneys: 100000
   currentShip: Betty
   currentLevel: Tutorial
