@@ -11,7 +11,7 @@ namespace Main {
     public class Main {
         [DllImport("__Internal")]
         private static extern void WindowAlert(string message);
-        public static bool _isDebug = true;
+        public static bool _isDebug = false;
         public static bool _wasLoad = false;
         public static string currentLevel = "Tutorial";
 
@@ -235,6 +235,7 @@ namespace Main {
             gameDetails.moneys = Player.moneys;
             gameDetails.levels = Levels.levels;
             gameDetails.currentLevel = Main.currentLevel;
+            gameDetails.currentShip = Player.currentShip;
 
             PlatformSafeMessage($"SaveFile: {JsonUtility.ToJson(gameDetails)} \nPath: {Application.persistentDataPath}/save.json");
 
