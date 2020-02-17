@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8803089523284835261}
   m_Layer: 0
   m_Name: Asteroid_Base
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +129,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10000
-  m_LinearDrag: 0.05
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -150,8 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _damage: 20
   _maxCount: 10
   dropObject: {fileID: 0}
+  rigidbody2D: {fileID: 0}
 --- !u!114 &-8803089523284835261
 MonoBehaviour:
   m_ObjectHideFlags: 0

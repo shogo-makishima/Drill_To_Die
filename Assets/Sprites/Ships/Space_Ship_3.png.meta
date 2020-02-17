@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 8ea7024d16220d9489f2c3558fd5a460
+guid: 09cf3fdf05f8eac409f08599b08dd73a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8708102695919127017
-    second: Ships_UI_0
+      213: -7032243894043930290
+    second: Space_Ship_3_0
   - first:
-      213: -8102457461555061505
-    second: Ships_UI_1
+      213: 5775116240815042663
+    second: Space_Ship_3_1
   - first:
-      213: -4560914839304326536
-    second: Ships_UI_0
+      213: 8164124880009692825
+    second: Space_Ship_3_2
   - first:
-      213: 4986850448754358744
-    second: Ships_UI_1
-  - first:
-      213: 1235714790937119781
-    second: Ships_UI_2
-  - first:
-      213: 4949464697536460063
-    second: Ships_UI_3
+      213: -3639844884589434436
+    second: Space_Ship_3_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -103,6 +97,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -118,12 +124,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ships_UI_0
+      name: Space_Ship_3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 96
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87235705e1064b0c0800000000000000
-      internalID: -4560914839304326536
+      spriteID: e411a91df63786e90800000000000000
+      internalID: -7032243894043930290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ships_UI_1
+      name: Space_Ship_3_1
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -153,19 +159,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9300acf0ad43540800000000000000
-      internalID: 4986850448754358744
+      spriteID: 760be568f95552050800000000000000
+      internalID: 5775116240815042663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ships_UI_2
+      name: Space_Ship_3_2
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -174,19 +180,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52cc0852e04262110800000000000000
-      internalID: 1235714790937119781
+      spriteID: 99608eea25ccc4170800000000000000
+      internalID: 8164124880009692825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ships_UI_3
+      name: Space_Ship_3_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -195,8 +201,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f153ff44be700b440800000000000000
-      internalID: 4949464697536460063
+      spriteID: cb92688bc5cac7dc0800000000000000
+      internalID: -3639844884589434436
       vertices: []
       indices: 
       edges: []

@@ -12,9 +12,11 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (!collision.collider.isTrigger && collision.collider.tag == "Player") {
+        if (!collision.collider.isTrigger && collision.collider.tag == "Player")
             Main.Player.health -= _damage;
+        if (!collision.collider.isTrigger && collision.collider.tag == "Object")
+            collision.collider.gameObject.GetComponent<ItemOnScene>().Damage(_damage);
+        if (!collision.collider.isTrigger)
             Destroy(gameObject);
-        }
     }
 }
