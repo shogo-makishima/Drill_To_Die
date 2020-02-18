@@ -11,7 +11,7 @@ namespace Main {
     public class Main {
         [DllImport("__Internal")]
         private static extern void WindowAlert(string message);
-        public static bool _isDebug = false;
+        public static bool _isDebug = true;
         public static bool _wasLoad = false;
         public static string currentLevel = "Tutorial";
 
@@ -22,6 +22,7 @@ namespace Main {
                 Ships.ships = staticScriptable.ships;
                 Items.items = staticScriptable.items;
                 Levels.levels = staticScriptable.levels;
+                Traders.traders = staticScriptable.traders;
                 Player.moneys = staticScriptable.moneys;
                 Player.currentShip = staticScriptable.currentShip;
                 Main.currentLevel = staticScriptable.currentLevel;
@@ -44,41 +45,42 @@ namespace Main {
         public static Upgrade GetUpgrade(string shipName, string upgradeName) {
             Ship ship = GetShipWithName(shipName);
 
-            foreach (Upgrade upgrade in ship.upgrades) {
-                if (upgrade.name == upgradeName) {
+            foreach (Upgrade upgrade in ship.upgrades)
+                if (upgrade.name == upgradeName)
                     return upgrade;
-                }
-            }
 
             return null;
         }
 
         public static LevelUpgrade GetNextLevelUpgrade(string shipName, string upgradeName) {
             Upgrade currentUpgrade = GetUpgrade(shipName, upgradeName);
-            if (currentUpgrade.currentLevel + 1 <= currentUpgrade.levelUpgrades.Length - 1) {
+            if (currentUpgrade.currentLevel + 1 <= currentUpgrade.levelUpgrades.Length - 1)
                 return currentUpgrade.levelUpgrades[currentUpgrade.currentLevel + 1];
-            }
 
             return null;
         }
 
 
         public static Item GetItem(string name) {
-            foreach (Item item in Items.items) {
-                if (item.name == name) {
+            foreach (Item item in Items.items)
+                if (item.name == name)
                     return item;
-                }
-            }
 
             return null;
         }
 
         public static Level GetLevel(string name) {
-            foreach (Level level in Levels.levels) {
-                if (level.name == name) {
+            foreach (Level level in Levels.levels) 
+                if (level.name == name)
                     return level;
-                }
-            }
+
+            return null;
+        }
+
+        public static Trader GetTrader(string name) {
+            foreach (Trader trader in Traders.traders)
+                if (trader.name == name)
+                    return trader;
 
             return null;
         }
@@ -172,6 +174,18 @@ namespace Main {
         }
     }
 
+    public class Traders {
+        public static Trader[] traders = new Trader[] { };
+    }
+
+    [System.Serializable]
+    public class Trader {
+        public string name = "";
+        public string displayName = "";
+        public Items.LootDropItem buyItem = Items.LootDropItem.Stone;
+        public float price = 0f;
+    }
+
     public class Items {
 
         public static Item[] items = new Item[] { };
@@ -184,7 +198,8 @@ namespace Main {
             GreenCrystal = 5,
             WhiteCrystal = 6,
             RedCrystal = 7,
-        Trash, };
+            Trash,
+        };
     }
 
     [System.Serializable]

@@ -10,6 +10,8 @@ public class StaticScriptableObject : ScriptableObject {
 
     public Main.Level[] levels = new Main.Level[] { };
 
+    public Main.Trader[] traders = new Main.Trader[] { };
+
     public float moneys = 0f;
     public string currentShip = "Betty";
 

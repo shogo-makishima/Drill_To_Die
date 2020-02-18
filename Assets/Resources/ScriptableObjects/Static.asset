@@ -319,6 +319,27 @@ MonoBehaviour:
     nameScene:
       m_Handle: 0
     finish: 1
+  traders:
+  - name: OOO_R&K
+    displayName: OOO Roga i Koputa
+    buyItem: 1
+    price: 54
+  - name: OOO_Snow
+    displayName: OOO Snow
+    buyItem: 3
+    price: 254
+  - name: OOO_CAR
+    displayName: OOO CAR
+    buyItem: 2
+    price: 120
+  - name: OOO_Dinners
+    displayName: OOO Dinners
+    buyItem: 6
+    price: 7600
+  - name: OOO_1
+    displayName: OOO 1
+    buyItem: 1
+    price: 36
   moneys: 0
   currentShip: Betty
   currentLevel: Tutorial
