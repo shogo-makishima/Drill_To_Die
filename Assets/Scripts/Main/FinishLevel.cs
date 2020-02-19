@@ -21,11 +21,11 @@ public class FinishLevel : MonoBehaviour {
     }
 
     void EndGame() {
-        foreach (KeyValuePair<string, int> keyValuePair in Main.Player.inventory) {
+        /*foreach (KeyValuePair<string, int> keyValuePair in Main.Player.inventory) {
             Main.Player.moneys += Main.Main.GetItem(keyValuePair.Key).price * keyValuePair.Value;
-        }
+        }*/
 
-        Main.Player.inventory.Clear();
+        // Main.Player.inventory.Clear();
         Main.SaveManager.Save();
         LoadMenu();
     }
