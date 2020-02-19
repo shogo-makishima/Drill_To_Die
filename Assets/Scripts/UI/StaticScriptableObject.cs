@@ -12,6 +12,11 @@ public class StaticScriptableObject : ScriptableObject {
 
     public Main.Trader[] traders = new Main.Trader[] { };
 
+    public string[] currentTraders = new string[] { };
+
+    public string[] inventoryKeys = new string[] { };
+    public int[] inventoryValues = new int[] { };
+
     public float moneys = 0f;
     public string currentShip = "Betty";
 

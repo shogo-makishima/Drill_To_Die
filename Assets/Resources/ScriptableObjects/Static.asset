@@ -268,35 +268,43 @@ MonoBehaviour:
   items:
   - name: Stone
     price: 50
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 5147895166143134176, guid: 08855e75747d1c54cb7ed495dbd6ce50, type: 3}
+    UI_Sprite: {fileID: -8773311529776156198, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: Ferrum
     price: 300
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 8038285319555871638, guid: 35725edac701fef4f969485979b2a988, type: 3}
+    UI_Sprite: {fileID: -7342513947892891833, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: Gold
     price: 460
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 3762250030258145649, guid: da254df61d4cf1d47af148810312f0db, type: 3}
+    UI_Sprite: {fileID: -5608655522832269768, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: Iridium
     price: 800
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 3576507543019179713, guid: fbd53ee0622dcf44ab398f5b0efb9b7a, type: 3}
+    UI_Sprite: {fileID: 5029701814630012455, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: GreenCrystal
     price: 5600
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 578195338524628183, guid: 8c7c91dcc76d9bb4cb44dbc854080730, type: 3}
+    UI_Sprite: {fileID: -3596718923391901014, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: WhiteCrystal
     price: 9800
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 4575800625702935997, guid: 9d72e20031f82b14a98588bff594a7d8, type: 3}
+    UI_Sprite: {fileID: -6828132889905305309, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: RedCrystal
     price: 2200
-    gameObject: {fileID: 0}
+    gameObject: {fileID: 4609208612430674765, guid: d85d783720e4afb43ada9b50426938c7, type: 3}
+    UI_Sprite: {fileID: -3986931174803144900, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
     destription: 
   - name: TrashCrystal
     price: 1
     gameObject: {fileID: 0}
+    UI_Sprite: {fileID: 0}
     destription: 
   levels:
   - name: Menu
@@ -340,6 +348,7 @@ MonoBehaviour:
     displayName: OOO 1
     buyItem: 1
     price: 36
+  currentTraders: []
   moneys: 0
   currentShip: Betty
   currentLevel: Tutorial

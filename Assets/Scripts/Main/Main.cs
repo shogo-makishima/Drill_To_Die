@@ -11,7 +11,7 @@ namespace Main {
     public class Main {
         [DllImport("__Internal")]
         private static extern void WindowAlert(string message);
-        public static bool _isDebug = true;
+        public static bool _isDebug = false;
         public static bool _wasLoad = false;
         public static string currentLevel = "Tutorial";
 
@@ -22,9 +22,14 @@ namespace Main {
                 Ships.ships = staticScriptable.ships;
                 Items.items = staticScriptable.items;
                 Levels.levels = staticScriptable.levels;
+
                 Traders.traders = staticScriptable.traders;
+                Traders.GenerateList();
+
                 Player.moneys = staticScriptable.moneys;
                 Player.currentShip = staticScriptable.currentShip;
+                Player.inventory = Player.GenerateInventory(staticScriptable.inventoryKeys, staticScriptable.inventoryValues);
+
                 Main.currentLevel = staticScriptable.currentLevel;
 
                 _wasLoad = true;
@@ -142,6 +147,16 @@ namespace Main {
         }
 
         /*Inventory System!*/
+        public static Dictionary<string, int> GenerateInventory(string[] keys, int[] values) {
+            Dictionary<string, int> localInventory = new Dictionary<string, int> { };
+
+            for (int i = 0; i < keys.Length; i++)
+                localInventory[keys[i]] = values[i];
+
+            return localInventory;
+        }
+
+
         public static void AddItem(string name_of_item, int count_of_item) {
             if (inventory.ContainsKey(name_of_item))
                 inventory[name_of_item] += count_of_item;
@@ -149,9 +164,9 @@ namespace Main {
                 inventory.Add(name_of_item, count_of_item);
         }
 
-        public static void RemoveItem(string name_of_item) {
+        public static void RemoveItem(string name_of_item, int count) {
             if (inventory.ContainsKey(name_of_item))
-                inventory[name_of_item] -= 1;
+                inventory[name_of_item] -= count;
             if (inventory[name_of_item] < 1)
                 inventory.Remove(name_of_item);
         }
@@ -176,6 +191,19 @@ namespace Main {
 
     public class Traders {
         public static Trader[] traders = new Trader[] { };
+
+        public static string[] nameTraders = new string[] { };
+
+        public static string[] currentTraders = new string[] { };
+
+        public static void GenerateList() {
+            List<string> nameTraders_Local = new List<string> { };
+
+            foreach (Trader trader in Traders.traders)
+                nameTraders_Local.Add(trader.name);
+
+            nameTraders = nameTraders_Local.ToArray();
+        }
     }
 
     [System.Serializable]
@@ -207,14 +235,19 @@ namespace Main {
         public string name = "";
         public float price = 1.0f;
         public GameObject gameObject = null;
+
+        public Sprite UI_Sprite = null;
+
         public string destription = "";
 
-        public Item(string getName, float getPrice, string getDescription, GameObject getGameObject) {
+        public Item(string getName, float getPrice, string getDescription, GameObject getGameObject, Sprite get_UI_Sprite) {
             name = getName;
             price = getPrice;
 
             gameObject = getGameObject;
             destription = getDescription;
+
+            UI_Sprite = get_UI_Sprite;
         }
     }
 
@@ -251,8 +284,10 @@ namespace Main {
             gameDetails.levels = Levels.levels;
             gameDetails.currentLevel = Main.currentLevel;
             gameDetails.currentShip = Player.currentShip;
+            gameDetails.inventoryKeys = Player.inventory.Keys.ToArray();
+            gameDetails.inventoryValues = Player.inventory.Values.ToArray();
 
-            PlatformSafeMessage($"SaveFile: {JsonUtility.ToJson(gameDetails)} \nPath: {Application.persistentDataPath}/save.json");
+            // PlatformSafeMessage($"SaveFile: {JsonUtility.ToJson(gameDetails)} \nPath: {Application.persistentDataPath}/save.json");
 
             string dataPath = Path.Combine(Application.persistentDataPath, "save.json");
 
