@@ -25,7 +25,8 @@ namespace Main {
 
                 Traders.traders = staticScriptable.traders;
                 Traders.GenerateList();
-                Traders.currentTraders = staticScriptable.currentTraders;
+                if (staticScriptable.currentTraders.Length > 0)
+                    Traders.currentTraders = staticScriptable.currentTraders;
 
                 Player.moneys = staticScriptable.moneys;
                 Player.currentShip = staticScriptable.currentShip;
@@ -286,6 +287,7 @@ namespace Main {
             gameDetails.currentLevel = Main.currentLevel;
             gameDetails.currentShip = Player.currentShip;
             gameDetails.currentTraders = Traders.currentTraders;
+            gameDetails.traders = Traders.traders;
             gameDetails.inventoryKeys = Player.inventory.Keys.ToArray();
             gameDetails.inventoryValues = Player.inventory.Values.ToArray();
 

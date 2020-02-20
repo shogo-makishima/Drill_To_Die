@@ -96,6 +96,7 @@ public class Menu_UIController : MonoBehaviour {
 
     string RandomTrader() {
         int r = Random.Range(0, Main.Traders.nameTraders.Length);
+        print(Main.Traders.nameTraders.Length);
         return Main.Traders.nameTraders[r];
     }
 
