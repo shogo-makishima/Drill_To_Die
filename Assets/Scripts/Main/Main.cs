@@ -311,6 +311,7 @@ namespace Main {
         }
 
         public static void DestroySave() {
+            Debug.Log("DESTROY SAVES!");
             string dataPath = Path.Combine(Application.persistentDataPath, "save.json");
             File.Delete(dataPath);
         }

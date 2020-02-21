@@ -77,9 +77,11 @@ MonoBehaviour:
         variable: 25
         price: 6800
       currentLevel: 0
+    description: This is simple mining ship. It was create in [DATA DELETED] year
+      for mining asteroids in Kuiper belt.
   - name: Apollo
     prefab: {fileID: 6765286810345821464, guid: 2c4eed4946efe4f4e85bcd0f8d6679a4, type: 3}
-    UI_Sprite: {fileID: 1235714790937119781, guid: 8ea7024d16220d9489f2c3558fd5a460, type: 3}
+    UI_Sprite: {fileID: 21300000, guid: 0530bfa18fbf4a140b3a604c988a9a4b, type: 3}
     upgrades:
     - name: Fuel
       levelUpgrades:
@@ -171,9 +173,12 @@ MonoBehaviour:
         variable: 50
         price: 15675
       currentLevel: 0
+    description: This ship was build as small transport for displacement people.
+      Later this ship was re-equip into mining ship, it was more powerful replacement
+      old "Betty".
   - name: Hexagon
     prefab: {fileID: 5772202176469227962, guid: 7e5aee119d2b07148b6978f11b71d95f, type: 3}
-    UI_Sprite: {fileID: -8102457461555061505, guid: 8ea7024d16220d9489f2c3558fd5a460, type: 3}
+    UI_Sprite: {fileID: 21300000, guid: 05c5f13370d29414b9489151a4f5c666, type: 3}
     upgrades:
     - name: Fuel
       levelUpgrades:
@@ -265,42 +270,47 @@ MonoBehaviour:
         variable: 150
         price: 41720
       currentLevel: 0
+    description: It was more powerful replacement "Apollo" in mining business. It
+      has two mining lasers, large cargo hold and medium armor.
   items:
   - name: Stone
     price: 50
     gameObject: {fileID: 5147895166143134176, guid: 08855e75747d1c54cb7ed495dbd6ce50, type: 3}
     UI_Sprite: {fileID: -8773311529776156198, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: It's simple rock, nothing unusual.
   - name: Ferrum
     price: 300
     gameObject: {fileID: 8038285319555871638, guid: 35725edac701fef4f969485979b2a988, type: 3}
     UI_Sprite: {fileID: -7342513947892891833, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: The most common metal is Iron [Ferrum]. It use everywhere.
   - name: Gold
     price: 460
     gameObject: {fileID: 3762250030258145649, guid: da254df61d4cf1d47af148810312f0db, type: 3}
     UI_Sprite: {fileID: -5608655522832269768, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: A precious metal is Gold [Aurum]. It use in electro schemes, jewelries...
   - name: Iridium
     price: 800
     gameObject: {fileID: 3576507543019179713, guid: fbd53ee0622dcf44ab398f5b0efb9b7a, type: 3}
     UI_Sprite: {fileID: 5029701814630012455, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: Iridium is rare metal. It use in armor for spaceships, pens...
   - name: GreenCrystal
     price: 5600
     gameObject: {fileID: 578195338524628183, guid: 8c7c91dcc76d9bb4cb44dbc854080730, type: 3}
     UI_Sprite: {fileID: -3596718923391901014, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: Green Crystal is more rare then Iridium and Red Crystal. It use
+      in guns, lasers.
   - name: WhiteCrystal
     price: 9800
     gameObject: {fileID: 4575800625702935997, guid: 9d72e20031f82b14a98588bff594a7d8, type: 3}
     UI_Sprite: {fileID: -6828132889905305309, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: Red Crystal is more rare then Iridium. It use in some old spaceships
+      engines, turrets.
   - name: RedCrystal
     price: 2200
     gameObject: {fileID: 4609208612430674765, guid: d85d783720e4afb43ada9b50426938c7, type: 3}
     UI_Sprite: {fileID: -3986931174803144900, guid: 76aee94b0880caf4e93380a34801be9d, type: 3}
-    destription: 
+    destription: White Crystal is more rare then Red Crystal and Green Crystal. It
+      use in new spaceships engines, jewelries...
   - name: TrashCrystal
     price: 1
     gameObject: {fileID: 0}
@@ -348,7 +358,13 @@ MonoBehaviour:
     displayName: OOO 1
     buyItem: 1
     price: 36
-  currentTraders: []
+  currentTraders:
+  - OOO_R&K
+  - OOO_Dinners
+  - OOO_CAR
+  inventoryKeys:
+  - Ferrum
+  inventoryValues: 03000000
   moneys: 0
   currentShip: Betty
   currentLevel: Tutorial

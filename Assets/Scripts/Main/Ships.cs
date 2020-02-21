@@ -13,6 +13,7 @@ namespace Main {
         public GameObject prefab = null;
         public Sprite UI_Sprite = null;
         public Upgrade[] upgrades = null;
+        public string description = "";
     }
 
     [System.Serializable]
